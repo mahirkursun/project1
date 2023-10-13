@@ -1,0 +1,17 @@
+*{
+    box-sizing: border-box;
+}
+html,body{
+    margin: 0;
+    padding: 0;
+}
+body{
+    text-align: center;
+    background-color: black;
+    color: white;
+}
+
+h2{
+    background-color: cadetblue;
+    padding: 8px;
+}

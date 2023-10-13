@@ -1,0 +1,65 @@
+.cardList {
+  width: 90vw;
+  margin: auto;
+}
+
+.card {
+  margin-top: 25px;
+  width: 450px;
+  height: 300px;
+  background-color: orange;
+  border-radius: 15px;
+  background: linear-gradient(to right, red, green);
+  position: relative;
+}
+
+.card img {
+  width: 200px;
+  height: 300px;
+  object-fit: cover;
+  float: left;
+  border-radius: 15px 0 0 15px;
+}
+.card-body {
+  margin-left: 10px;
+  width: 240px;
+  float: left;
+}
+.card-delete-button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: none;
+  height: 300px;
+  width: 20px;
+  background-color: red;
+  color: white;
+  border-radius: 15px 0 0 15px;
+  opacity: 0;
+  transition: 0.5s;
+  font-size: 50px;
+}
+.card-delete-button:hover {
+  width: 200px;
+  opacity: 0.7;
+  cursor: pointer;
+}
+.card-edit-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: none;
+  height: 300px;
+  width: 20px;
+  background-color: yellow;
+  color: black;
+  border-radius: 0 15px 15px 0;
+  opacity: 0;
+  transition: 0.5s;
+  font-size: 50px;
+}
+.card-edit-button:hover {
+  width: 250px;
+  opacity: 0.7;
+  cursor: pointer;
+}

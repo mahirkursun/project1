@@ -1,0 +1,51 @@
+nav{
+    padding: 30px;
+    padding-bottom: 45px;
+    background: linear-gradient(aqua,black);
+    display: flex;
+    justify-content: space-between;
+}
+
+nav img{
+    width: 80px;
+}
+
+.brand{
+    display: flex;
+    align-items: center;
+    font-size: 22px;
+    font-family: monospace;
+    
+}
+.brand b{
+    margin-left: 10px;
+}
+.kategori ul{
+    list-style: none;
+    
+}
+.kategori ul li{
+    display: inline-block;
+    font-family: monospace;
+    font-size: 18px;
+    transition: .7s;
+    margin-inline: 30px;
+    
+}
+
+.kategori ul li:hover{
+    text-decoration: underline;
+    transform: scale(1.3);
+    color: orangered;
+    cursor: pointer;
+}
+.search-box input{
+    width: 15vw;
+    height: 3.5vh;
+    border-radius: 20px;
+    font-size: 25px;
+    padding: 0 12px ;
+    margin-top: 15px;
+    font-family: monospace;
+    margin-left: 240px;
+  }
