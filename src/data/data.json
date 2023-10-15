@@ -38,7 +38,7 @@
     },
     {
       "id": 5,
-      "kitapAdi": "İnce Memed 2",
+      "kitapAdi": "İnce Memed 1",
       "kitapYazari": "Yaşar Kemal",
       "kitapKategori": "Edebiyat",
       "sayfaSayisi": "400",
@@ -88,38 +88,7 @@
       "kitapYazari": "Stephen Hanselman",
       "sayfaSayisi": 432,
       "kitapResim": "https://r2.1k-cdn.com/sig/size:128/plain/https%3A%2F%2F1k-cdn.com%2Fresimler%2Fkitaplar%2F1010667_a139e_1619956364.jpg",
-      "kitapAciklama": "Mutluluğa nasıl kavuşuruz? Öfkemizi kontrol etmenin en etkili yolu nedir? Başarının gerçek ölçütü ne olmalıdır? Kederimizin üstesinden gelip hayatımıza nasıl bir anlam katabiliriz? Tüm bu soruların ve daha fazlasının cevabı Stoacı felsefenin özünü oluşturur. ",
-      "isDeleted": true
-    },
-    {
-      "kitapAdi": "asd",
-      "kitapYazari": "asdasd",
-      "kitapKategori": "Yazılım",
-      "sayfaSayisi": "400",
-      "kitapResim": "https://img.kitapyurdu.com/v1/getImage/fn:11765592/wi:120/wh:true",
-      "kitapAciklama": "<zx<zx<zx",
-      "id": 11,
-      "isDeleted": true
-    },
-    {
-      "kitapAdi": "sdf",
-      "kitapYazari": "sdf",
-      "kitapKategori": "Edebiyat",
-      "sayfaSayisi": "sfdsf",
-      "kitapResim": "sdfdf",
-      "kitapAciklama": "sdfsdf",
-      "id": 12,
-      "isDeleted": true
-    },
-    {
-      "id": 13,
-      "kitapAdi": "sadas",
-      "kitapYazari": "Yaşar Kemal",
-      "kitapKategori": "Edebiyat",
-      "sayfaSayisi": "400",
-      "kitapResim": "https://img.kitapyurdu.com/v1/getImage/fn:11765592/wi:120/wh:true",
-      "kitapAciklama": "asdasdsad",
-      "isDeleted": true
+      "kitapAciklama": "Mutluluğa nasıl kavuşuruz? Öfkemizi kontrol etmenin en etkili yolu nedir? Başarının gerçek ölçütü ne olmalıdır? Kederimizin üstesinden gelip hayatımıza nasıl bir anlam katabiliriz? Tüm bu soruların ve daha fazlasının cevabı Stoacı felsefenin özünü oluşturur. "
     }
   ],
   "kategoriler": [

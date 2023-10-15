@@ -48,4 +48,6 @@ nav img{
     margin-top: 15px;
     font-family: monospace;
     margin-left: 240px;
+    border: none;
+    cursor: pointer;
   }

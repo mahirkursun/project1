@@ -1,58 +1,22 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext } from "react";
 
 import "../style/form.scss";
+import DataContext from "../context/DataContext";
 
-function Form({ kitapEkleDuzenle, kitaplar, secilenKitap }) {
-  const [kitapAdi, setKitapAdi] = useState("");
-  const [kitapYazari, setKitapYazari] = useState("");
-  const [kitapKategori, setKitapKategori] = useState("Kategori Seçiniz");
-  const [sayfaSayisi, setSayfaSayisi] = useState("");
-  const [kitapResim, setKitapResim] = useState("");
-  const [kitapAciklama, setKitapAciklama] = useState("");
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    const yeniKitapBilgisi = {
-      id: kitaplar.length + 1,
-      kitapAdi: kitapAdi,
-      kitapYazari: kitapYazari,
-      kitapKategori: kitapKategori,
-      sayfaSayisi: sayfaSayisi,
-      kitapResim: kitapResim,
-      kitapAciklama: kitapAciklama,
-    };
-
-    kitapEkleDuzenle(yeniKitapBilgisi);
-
-    setKitapAdi("");
-    setKitapYazari("");
-    setKitapKategori("Kategori Seçiniz");
-    setSayfaSayisi("");
-    setKitapResim("");
-    setKitapAciklama("");
-  };
-
-  useEffect(() => {
-    if (secilenKitap) {
-      setKitapKategori(secilenKitap.kitapKategori);
-      setKitapAdi(secilenKitap.kitapAdi);
-      setKitapYazari(secilenKitap.kitapYazari);
-      setSayfaSayisi(secilenKitap.sayfaSayisi);
-      setKitapResim(secilenKitap.kitapResim);
-      setKitapAciklama(secilenKitap.kitapAciklama);
-    }
-  }, [secilenKitap]);
+function Form() {
+  const {state, dispatch, handleSubmit} = useContext(DataContext);
 
   return (
     <div className="form-container">
       <form onSubmit={handleSubmit}>
-        <h3>{secilenKitap ? "Kitap Düzenle" : "Kitap Ekle"}</h3>
+        <h3>{state.secilenKitap ? "Kitap Düzenle" : "Kitap Ekle"}</h3>
         <select
           placeholder="Kitap Kategorisi:"
           id="kategori"
-          value={kitapKategori}
-          onChange={(e) => setKitapKategori(e.target.value)}
+          value={state.kitapKategori}
+          onChange={(e) =>
+            dispatch({ type: "kitapKategori", payload: e.target.value })
+          }
         >
           <option>Kategori Seçiniz</option>
           <option>Yazılım</option>
@@ -64,30 +28,38 @@ function Form({ kitapEkleDuzenle, kitaplar, secilenKitap }) {
           type="text"
           placeholder="Kitap Adı"
           id="ad"
-          value={kitapAdi}
-          onChange={(e) => setKitapAdi(e.target.value)}
+          value={state.kitapAdi}
+          onChange={(e) =>
+            dispatch({ type: "kitapAdi", payload: e.target.value })
+          }
         />
         <input
           type="text"
           placeholder="Kitap Yazarı"
           id="yazar"
-          value={kitapYazari}
-          onChange={(e) => setKitapYazari(e.target.value)}
+          value={state.kitapYazari}
+          onChange={(e) =>
+            dispatch({ type: "kitapYazari", payload: e.target.value })
+          }
         />
 
         <input
           type="text"
           placeholder="Sayfa Sayısı"
           id="sayi"
-          value={sayfaSayisi}
-          onChange={(e) => setSayfaSayisi(e.target.value)}
+          value={state.sayfaSayisi}
+          onChange={(e) =>
+            dispatch({ type: "sayfaSayisi", payload: e.target.value })
+          }
         />
         <input
           type="text"
           id="resim"
           placeholder="Kitap Resmi(URL)"
-          value={kitapResim}
-          onChange={(e) => setKitapResim(e.target.value)}
+          value={state.kitapResim}
+          onChange={(e) =>
+            dispatch({ type: "kitapResim", payload: e.target.value })
+          }
         />
 
         <textarea
@@ -96,21 +68,23 @@ function Form({ kitapEkleDuzenle, kitaplar, secilenKitap }) {
           cols="45"
           placeholder="Kitap Açıklaması"
           id="aciklama"
-          value={kitapAciklama}
-          onChange={(e) => setKitapAciklama(e.target.value)}
+          value={state.kitapAciklama}
+          onChange={(e) =>
+            dispatch({ type: "kitapAciklama", payload: e.target.value })
+          }
         />
 
         <input
           disabled={
-            kitapKategori === "Kategori Seçiniz" ||
-            !kitapAdi ||
-            !kitapYazari ||
-            !sayfaSayisi ||
-            !kitapResim ||
-            !kitapAciklama
+            state.kitapKategori === "Kategori Seçiniz" ||
+            !state.kitapAdi ||
+            !state.kitapYazari ||
+            !state.sayfaSayisi ||
+            !state.kitapResim ||
+            !state.kitapAciklama
           }
           type="submit"
-          value={secilenKitap ? "Düzenle" : "Ekle"}
+          value={state.secilenKitap ? "Düzenle" : "Ekle"}
         />
       </form>
     </div>

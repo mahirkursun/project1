@@ -1,31 +1,37 @@
-import React from "react";
+import React, { useContext } from "react";
 import "../style/navi.css";
 import Logo from "../images/book.png";
+import DataContext from "../context/DataContext";
 
-function Navi({ kategoriler, setSecilenKategori, secilenKategori, }) {
+function Navi() {
+  const {state,dispatch} =
+    useContext(DataContext);
+
+  const handleClickKategori=(kategoriAdi)=>{
+    dispatch({type:"secilenKategori",payload:kategoriAdi})
+  }
   return (
     <nav>
       <div className="brand">
         <img src={Logo} alt="logo" />
         <b>BilgeAdam Library</b>
       </div>
-      {/* <div className="search-box">
+      <div className="search-box">
         <input
-        
           type="search"
           placeholder="Kitap ara"
-          onChange={kitapAra}
+          onChange={(e) => dispatch({type:"arananKitap", payload:e.target.value})}
         />
-      </div> */}
+      </div>
       <div className="kategori">
         <ul>
-          {kategoriler.map(
+          {state.kategoriler.map(
             (kategori) =>
-              ((secilenKategori && secilenKategori !== "Tüm Kitaplar") ||
+              ((state.secilenKategori && state.secilenKategori !== "Tüm Kitaplar") ||
                 kategori.kategoriAdi !== "Tüm Kitaplar") && (
                 <li
                   key={kategori.kategoriID}
-                  onClick={() => setSecilenKategori(kategori.kategoriAdi)}
+                  onClick={() => handleClickKategori(kategori.kategoriAdi)}
                 >
                   {kategori.kategoriAdi}
                 </li>
