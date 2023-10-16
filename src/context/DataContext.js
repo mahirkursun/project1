@@ -46,7 +46,7 @@ export const DataProvider = ({ children }) => {
       });
     }
   };
-  //case11
+  //case11 
   const kitapSil = async (id) => {
     let url = `http://localhost:3005/kitaplar/${id}`;
     const response = await axios.patch(url, { isDeleted: true });
